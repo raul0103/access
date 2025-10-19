@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'allowed_origins' => explode(',', (string) env('ALLOWED_ORIGINS', ''))
 ];

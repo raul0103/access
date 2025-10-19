@@ -1,0 +1,40 @@
+name: access
+
+services:
+  appserver:
+    type: php:8.2
+    via: apache
+    webroot: backend/public
+
+  database:
+    type: mysql:8.0
+    portforward: 3307
+    creds:
+      database: access
+
+  node:
+    type: node:22
+    ports:
+      - 5173:5173
+
+proxy:
+  appserver:
+    - access.lndo.site
+
+tooling:
+  composer:
+    service: appserver
+    cmd: composer
+    dir: /app/backend/
+  artisan:
+    service: appserver
+    cmd: php artisan
+    dir: /app/backend/
+  npm:
+    service: node
+    cmd: npm
+    dir: /app/frontend/
+  npx:
+    service: node
+    cmd: npx
+    dir: /app/frontend/
