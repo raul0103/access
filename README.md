@@ -11,25 +11,43 @@
 
 ## Запуск Backend
 
-1. Установите зависимости и запустите Lando:
+1. Настройте подключение к базе данных в `.env`:
+
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=database
+   DB_PORT=3306
+   DB_DATABASE=access
+   DB_USERNAME=<ваш_пользователь>
+   DB_PASSWORD=<ваш_пароль>
+
+   ```
+
+2. Установите список разрешённых origin для CORS через переменную ALLOWED_ORIGINS в .env, через запятую:
+
+   ```env
+   ALLOWED_ORIGINS=http://localhost:5173,https://localhost:5173
+   ```
+
+3. Установите зависимости и запустите Lando:
 
    ```bash
    lando start
    ```
 
-2. Сгенерируйте ключ приложения Laravel:
+4. Сгенерируйте ключ приложения Laravel:
 
    ```bash
    lando artisan key:generate
    ```
 
-3. Запустите миграции базы данных:
+5. Запустите миграции базы данных:
 
    ```bash
    lando artisan migrate
    ```
 
-4. Backend будет доступен по адресу:
+6. Backend будет доступен по адресу:
    ```
    http://access.lndo.site
    ```
