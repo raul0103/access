@@ -11,11 +11,12 @@ export default function HomePage() {
   const handleTestRequest = async () => {
     try {
       const result = await testApi.getTest();
-      setData(result);
+
+      setData(JSON.stringify(result));
     } catch (err) {
       console.error("Ошибка:", err);
     }
   };
 
-  return <div>Тестовый API-response: {data && "Получаю данные ..."}</div>;
+  return <div>Тестовый API-response: {data ?? "Получаю данные ..."}</div>;
 }

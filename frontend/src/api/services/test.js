@@ -4,7 +4,7 @@ import api from "../index.js";
 export const testApi = {
   async getTest() {
     try {
-      const response = await api.get("/");
+      const response = await api.get();
       return response.data;
     } catch (error) {
       console.error("Ошибка при получении тестовых данных:", error);
