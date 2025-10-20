@@ -9,7 +9,7 @@ export default function RegisterForm({formState, errors = {}, submit}) {
           type="text"
           id="name"
           name="name"
-          autocomplete="name"
+          autoComplete="name"
           value={data.name}
           onChange={(e) => setData({...data, name: e.target.value})}
           required
@@ -22,7 +22,7 @@ export default function RegisterForm({formState, errors = {}, submit}) {
           type="email"
           id="email"
           name="email"
-          autocomplete="email"
+          autoComplete="email"
           value={data.email}
           onChange={(e) => setData({...data, email: e.target.value})}
           required
@@ -35,7 +35,7 @@ export default function RegisterForm({formState, errors = {}, submit}) {
           type="text"
           id="password"
           name="password"
-          autocomplete="new-password"
+          autoComplete="new-password"
           value={data.password}
           onChange={(e) => setData({...data, password: e.target.value})}
           required
