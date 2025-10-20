@@ -1,22 +1,17 @@
-import {useState, useEffect} from "react";
-import {testApi} from "../api/services/test.js";
+import {useState} from "react";
+import RegisterForm from "../components/Auth/RegisterForm.jsx";
 
 export default function HomePage() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  useEffect(() => {
-    handleTestRequest();
-  }, []);
-
-  const handleTestRequest = async () => {
-    try {
-      const result = await testApi.getTest();
-
-      setData(JSON.stringify(result));
-    } catch (err) {
-      console.error("Ошибка:", err);
-    }
+    console.log("submit", data);
   };
 
-  return <div>Тестовый API-response: {data ?? "Получаю данные ..."}</div>;
+  return <RegisterForm formState={[data, setData]} submit={handleSubmit} />;
 }

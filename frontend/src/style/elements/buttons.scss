@@ -1,0 +1,120 @@
+@use "../variables.scss" as *;
+
+// 🎨 Базовый миксин для кнопок
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: $input-radius;
+  padding: $input-padding-y $input-padding-x;
+  cursor: pointer;
+  transition: background-color $transition, color $transition,
+    border-color $transition, box-shadow $transition;
+  border: 1px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($input-border-focus, 0.25);
+  }
+}
+
+// ===== 🎯 Варианты кнопок =====
+
+// 🔵 Primary
+.btn--primary {
+  @include button-base;
+  background-color: $input-border-focus;
+  border-color: $input-border-focus;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background-color: darken($input-border-focus, 5%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: darken($input-border-focus, 10%);
+  }
+}
+
+// ⚪️ Secondary
+.btn--secondary {
+  @include button-base;
+  background-color: #f3f4f6;
+  color: $input-text;
+  border-color: #e5e7eb;
+
+  &:hover:not(:disabled) {
+    background-color: darken(#f3f4f6, 5%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: darken(#f3f4f6, 10%);
+  }
+}
+
+// 🪶 Outline
+.btn--outline {
+  @include button-base;
+  background-color: transparent;
+  border-color: $input-border-focus;
+  color: $input-border-focus;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($input-border-focus, 0.1);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba($input-border-focus, 0.2);
+  }
+}
+
+// 🔴 Danger
+.btn--danger {
+  @include button-base;
+  background-color: $input-border-error;
+  border-color: $input-border-error;
+  color: #fff;
+
+  &:hover:not(:disabled) {
+    background-color: darken($input-border-error, 5%);
+  }
+
+  &:active:not(:disabled) {
+    background-color: darken($input-border-error, 10%);
+  }
+}
+
+// 🔳 Размеры кнопок
+.btn--sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn--lg {
+  padding: 0.9rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+// 🔄 Иконки в кнопках
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
