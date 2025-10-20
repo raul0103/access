@@ -23,31 +23,25 @@
 
    ```
 
-2. Установите список разрешённых origin для CORS через переменную ALLOWED_ORIGINS в .env, через запятую:
-
-   ```env
-   ALLOWED_ORIGINS=http://localhost:5173,https://localhost:5173
-   ```
-
-3. Установите зависимости и запустите Lando:
+2. Установите зависимости и запустите Lando:
 
    ```bash
    lando start
    ```
 
-4. Сгенерируйте ключ приложения Laravel:
+3. Сгенерируйте ключ приложения Laravel:
 
    ```bash
    lando artisan key:generate
    ```
 
-5. Запустите миграции базы данных:
+4. Запустите миграции базы данных:
 
    ```bash
    lando artisan migrate
    ```
 
-6. Backend будет доступен по адресу:
+5. Backend будет доступен по адресу:
    ```
    http://access.lndo.site
    ```
