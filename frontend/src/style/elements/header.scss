@@ -1,0 +1,36 @@
+@use "../variables" as *;
+
+header {
+  background-color: $color-base;
+  border-bottom: 1px solid $color-border;
+  padding: 1rem 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    a {
+      color: $color-text;
+      font-weight: 500;
+      transition: color $transition-base;
+
+      &:hover,
+      &.active {
+        color: $color-primary;
+      }
+    }
+  }
+}

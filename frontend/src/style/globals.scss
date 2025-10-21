@@ -1,0 +1,44 @@
+@use "./variables" as *;
+
+// ==========================
+// 🌐 Глобальные стили проекта
+// ==========================
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.75rem;
+  }
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-base;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: scale-color($color-primary, $lightness: -10%);
+  }
+}
