@@ -1,7 +1,7 @@
-import HomePage from "./pages/Home";
+import {Outlet} from "react-router";
 
 function App() {
-  return <HomePage />;
+  return <Outlet />;
 }
 
 export default App;
