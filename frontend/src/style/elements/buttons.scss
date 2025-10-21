@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../variables.scss" as *;
 
 // 🎨 Базовый миксин для кнопок
@@ -39,11 +40,11 @@
   color: #fff;
 
   &:hover:not(:disabled) {
-    background-color: darken($color-primary, 5%);
+    background-color: color.adjust($color-primary, $lightness: -5%);
   }
 
   &:active:not(:disabled) {
-    background-color: darken($color-primary, 10%);
+    background-color: color.adjust($color-primary, $lightness: -10%);
   }
 }
 
@@ -55,11 +56,11 @@
   color: #fff;
 
   &:hover:not(:disabled) {
-    background-color: darken($color-secondary, 5%);
+    background-color: color.adjust($color-secondary, $lightness: -5%);
   }
 
   &:active:not(:disabled) {
-    background-color: darken($color-secondary, 10%);
+    background-color: color.adjust($color-secondary, $lightness: -10%);
   }
 }
 
@@ -87,11 +88,11 @@
   color: #fff;
 
   &:hover:not(:disabled) {
-    background-color: darken($color-danger, 5%);
+    background-color: color.adjust($color-danger, $lightness: -5%);
   }
 
   &:active:not(:disabled) {
-    background-color: darken($color-danger, 10%);
+    background-color: color.adjust($color-danger, $lightness: -10%);
   }
 }
 
@@ -103,11 +104,11 @@
   color: #fff;
 
   &:hover:not(:disabled) {
-    background-color: darken($color-success, 5%);
+    background-color: color.adjust($color-success, $lightness: -5%);
   }
 
   &:active:not(:disabled) {
-    background-color: darken($color-success, 10%);
+    background-color: color.adjust($color-success, $lightness: -10%);
   }
 }
 
